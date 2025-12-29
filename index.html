@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car World</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Car <span>World</span></div>
+
+        <input type="text" id="searchBox" placeholder="Search car model..." onkeyup="searchCars()">
+
+        <div class="icons">
+            <button class="mode-btn" onclick="toggleDarkMode()">🌙</button>
+            <button class="menu-btn" onclick="openMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <aside id="sideMenu">
+        <button class="close-btn" onclick="closeMenu()">✖</button>
+        <a href="#">Home</a>
+        <a href="#">Buy Cars</a>
+        <a href="#">Sell Cars</a>
+        <a href="#">Reviews</a>
+        <a href="#">Contact</a>
+    </aside>
+
+    <!-- OVERLAY -->
+    <div id="overlay" onclick="closeMenu()"></div>
+
+
+    <!-- CATEGORY FILTER -->
+    <section class="categories">
+        <button onclick="filterCategory('All')" class="active">All</button>
+        <button onclick="filterCategory('Sedan')">Sedan</button>
+        <button onclick="filterCategory('SUV')">SUV</button>
+        <button onclick="filterCategory('Hatchback')">Hatchback</button>
+        <button onclick="filterCategory('Coupe')">Coupe</button>
+        <button onclick="filterCategory('Sport')">Sport</button>
+    </section>
+
+
+    <!-- PRICE RANGE FILTER -->
+    <section class="filter-section">
+        <label>Price Range: <span id="priceValue">0 - 100000</span></label>
+        <input type="range" id="priceRange" min="10000" max="100000" value="100000" oninput="filterPrice()">
+    </section>
+
+
+    <!-- CAR GRID -->
+    <section class="car-section">
+        <h2>Available Cars</h2>
+
+        <div class="car-container" id="carList">
+
+            <!-- CAR 1 -->
+            <div class="car-card" data-category="Sport" data-price="55300">
+                <img src="BMW 850i.jpeg">
+                <h3>BMW 850i xDrive</h3>
+                <p class="price">$55,300</p>
+                <p class="info">Petrol • Automatic • 390 kW</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- CAR 2 -->
+            <div class="car-card" data-category="Hatchback" data-price="32509">
+                <img src="mercedes A250.jpeg">
+                <h3>Mercedes A250</h3>
+                <p class="price">$32,509</p>
+                <p class="info">Hybrid • Automatic • 160 kW</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- CAR 3 -->
+            <div class="car-card" data-category="Sport" data-price="75900">
+                <img src="Audi.jpeg">
+                <h3>Audi A6</h3>
+                <p class="price">$75,900</p>
+                <p class="info">Petrol • Sports • 420 kW</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- CAR 4 -->
+            <div class="car-card" data-category="SUV" data-price="68000">
+                <img src="Ferrari 488.jpeg">
+                <h3>Ferrari 488</h3>
+                <p class="price">$240,000</p>
+                <p class="info">petrol • RWD • 493 kW</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- CAR 5-->
+             <div class="car-card" data-category="SUV" data-price="68000">
+                <img src="hondacity.jpeg">
+                <h3>Honda City</h3>
+                <p class="price">$23,900</p>
+                <p class="info">Petrol • FWD • 89 kW</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+             
+
+        </div>
+    </section>
+
+<script src="script.js"></script>
+</body>
+</html>
